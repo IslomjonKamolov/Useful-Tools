@@ -144,7 +144,7 @@ export default function Header() {
             </button>
             <ul
               onClick={() => dropDown && setDropDown(false)}
-              style={menu ? { top: "0" } : { top: "-100%" }}
+              style={menu ? { top: "0" } : { top: "-200%" }}
               className="res__nav__list"
             >
               <button onClick={()=> setMenu(false)} className="closeBtn">
