@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   const [dropDown, setDropDown] = useState(false);
+  const [menu, setMenu] = useState(false);
+  
   return (
     <>
       <header className="header">
@@ -17,11 +19,11 @@ export default function Header() {
                   Home
                 </Link>
               </li>
-              <li className="list__item">
+              {/* <li className="list__item">
                 <Link to="About" className="link">
                   About
                 </Link>
-              </li>
+              </li> */}
               <li className="list__item">
                 <Link to="Contact" className="link">
                   Contact
@@ -74,6 +76,154 @@ export default function Header() {
                   </li>
                   <li>
                     <Link to="Password" className="link">
+                      Password Generator
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <button className="burgerMenu" onClick={() => setMenu(true)}>
+              <svg
+                viewBox="0 0 32 32"
+                enableBackground="new 0 0 32 32"
+                id="Editable-line"
+                version="1.1"
+                xmlSpace="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                fill="#000000"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <g id="SVGRepo_iconCarrier">
+                  <line
+                    fill="none"
+                    id="XMLID_73_"
+                    stroke="#000000"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={2}
+                    x1={16}
+                    x2={16}
+                    y1={7}
+                    y2={25}
+                  />
+                  <line
+                    fill="none"
+                    id="XMLID_56_"
+                    stroke="#000000"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={2}
+                    x1={7}
+                    x2={7}
+                    y1={7}
+                    y2={25}
+                  />
+                  <line
+                    fill="none"
+                    id="XMLID_74_"
+                    stroke="#000000"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={2}
+                    x1={25}
+                    x2={25}
+                    y1={7}
+                    y2={25}
+                  />
+                </g>
+              </svg>
+            </button>
+            <ul
+              onClick={() => dropDown && setDropDown(false)}
+              style={menu ? { top: "0" } : { top: "-100%" }}
+              className="res__nav__list"
+            >
+              <button onClick={()=> setMenu(false)} className="closeBtn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM8.96963 8.96965C9.26252 8.67676 9.73739 8.67676 10.0303 8.96965L12 10.9393L13.9696 8.96967C14.2625 8.67678 14.7374 8.67678 15.0303 8.96967C15.3232 9.26256 15.3232 9.73744 15.0303 10.0303L13.0606 12L15.0303 13.9696C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0303 15.0303C9.73742 15.3232 9.26254 15.3232 8.96965 15.0303C8.67676 14.7374 8.67676 14.2625 8.96965 13.9697L10.9393 12L8.96963 10.0303C8.67673 9.73742 8.67673 9.26254 8.96963 8.96965Z"
+                      fill="#9195a1"
+                    />
+                  </g>
+                </svg>
+              </button>
+
+              <li className="res__list__item">
+                <Link to="/" onClick={() => setMenu(false)} className="res__link">
+                  Home
+                </Link>
+              </li>
+              <li className="res__list__item">
+                <Link to="Contact" className="res__link" onClick={() => setMenu(false)}>
+                  Contact
+                </Link>
+              </li>
+              <li className="res__list__item__category">
+                <span
+                  onClick={() => {
+                    setDropDown(!dropDown);
+                  }}
+                  className="res__link"
+                >
+                  Tools
+                  <span className="res__link__SVG">
+                    <svg
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#000000"
+                    >
+                      <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <g id="SVGRepo_iconCarrier">
+                        <rect x={0} fill="none" width={24} height={24} />
+                        <g>
+                          <path d="M7 10l5 5 5-5" />
+                        </g>
+                      </g>
+                    </svg>
+                  </span>
+                </span>
+                <ul
+                  className={dropDown ? `res__category__list` : "res__hidden"}
+                >
+                  <li>
+                    <Link onClick={() => setMenu(false)} to="AgeCalculator" className="res__link">
+                      Age calculator
+                    </Link>
+                  </li>
+                  <li>
+                    <Link onClick={() => setMenu(false)} to="WordCounter" className="res__link">
+                      Word counter
+                    </Link>
+                  </li>
+                  <li>
+                    <Link onClick={() => setMenu(false)} to="Password" className="res__link">
                       Password Generator
                     </Link>
                   </li>

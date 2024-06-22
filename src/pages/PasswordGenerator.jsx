@@ -49,7 +49,7 @@ const PasswordGenerator = () => {
     <div className="password-generator container">
       <h2 className="title">Password Generator</h2>
       <div className="input-group">
-        <label className="label">
+        <label className="label" id="label">
           Length:
           <input
             className="input"

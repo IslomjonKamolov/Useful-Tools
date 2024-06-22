@@ -422,10 +422,9 @@ h6 {
   outline: none;
   border: 2px solid gray;
   border-radius: 24px;
-
 }
 
-.label{
+.label {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -476,8 +475,7 @@ h6 {
   border-radius: 12px;
 }
 
-
-.copy-button{
+.copy-button {
   max-width: 600px;
   width: 100%;
   border-radius: 24px;
@@ -495,6 +493,294 @@ h6 {
   margin-right: auto;
 }
 
-.copy-button:hover{
+.copy-button:hover {
   background: #f0f0f0;
+}
+
+.formSection {
+  padding: 50px 0;
+}
+
+.formSection__containeer > form {
+  max-width: 800px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.formSection__containeer > form > label {
+  width: 100%;
+  margin-bottom: 10px;
+  flex-direction: column;
+  display: flex;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  box-shadow: 0 0 4px 0 gray inset;
+  border-radius: 14px;
+  padding: 4px 0;
+}
+
+.contactTitle {
+  font-size: 48px;
+  text-align: center;
+  font-family: "Acme", sans-serif;
+  margin-bottom: 20px;
+}
+.contactLabel {
+  display: flex;
+  padding: 0 17px;
+  margin-bottom: 5px;
+}
+.contactInp {
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  text-transform: capitalize;
+  padding: 5px 14px;
+  border: none;
+  border-radius: 14px;
+  outline: none;
+}
+.submit {
+  grid-column: span 2;
+  border: none;
+  box-shadow: 0 0 4px 0 rgb(72, 72, 72) inset;
+  background: transparent;
+  padding: 8px 7px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-family: monospace;
+  font-weight: 600;
+  cursor: pointer;
+  color: rgb(72, 72, 72);
+  transition: all 0.3s;
+  max-width: 400px;
+  border-radius: 24px;
+}
+
+.submit:hover {
+  box-shadow: 0 0 10px 0 rgb(84, 101, 255) inset;
+  color: rgb(8, 21, 132);
+}
+
+.res__nav__list {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav__list {
+    display: none;
+  }
+
+  .telegram {
+    display: none;
+  }
+
+  .headerBox {
+    max-width: 100%;
+  }
+
+  .res__nav__list {
+    display: block;
+    padding: 30px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(243, 248, 221);
+    z-index: 9;
+    width: 100%;
+    list-style: none;
+    transition: all 0.3s;
+    min-height: 100vh;
+  }
+  .res__list__item,
+  .res__category__item {
+    width: 100%;
+    padding: 4px 0;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+    /* justify-content: center; */
+    /* align-items: center; */
+    border-bottom: 1px solid rgb(109, 106, 106);
+  }
+  .res__link {
+    font-family: " Playwrite US Modern ", cursive;
+    color: #0b0c52;
+    font-weight: 500;
+    max-width: 250px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: 18px;
+  }
+
+  .res__category__list {
+    margin-left: 30px;
+    padding-left: 20px;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    border-radius: 8px;
+    top: 145px;
+    transition: all 0.3s;
+    list-style: none;
+    background: rgba(255, 166, 0, 0.459);
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .res__hidden {
+    position: absolute;
+    opacity: 0;
+    top: 20px;
+    max-width: 250px;
+    z-index: -1;
+    overflow: hidden;
+    transition: all 0.3s;
+    margin-left: 30px;
+    padding-left: 20px;
+  }
+
+  .res__link__SVG {
+    width: 20px;
+    height: 20px;
+  }
+  .dropDown {
+  }
+  .res__category__item {
+  }
+
+  .closeBtn {
+    width: 25px;
+    height: 25px;
+    margin-left: auto;
+    display: flex;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .burgerMenu {
+    cursor: pointer;
+    width: 30px;
+    border: none;
+    height: 30px;
+    display: flex;
+    background: transparent;
+  }
+
+  .home,
+  .formSection,
+  .wordCounterSec,
+  .password-generator {
+    padding: 30px 0;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .home__title,
+  .contactTitle,
+  .age__title,
+  .title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .home__title2,
+  .tools__text {
+    font-size: 14px;
+  }
+
+  .tools__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .tools__icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contactLabel {
+    font-size: 14px;
+  }
+
+  .formSection__containeer > form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .age__label {
+    font-size: 14px;
+  }
+
+  .age__input {
+    font-size: 12px;
+    padding: 5px 7px;
+  }
+
+  .modal__content > p {
+    font-size: 14px;
+  }
+
+  .your__age {
+    font-size: 20px;
+  }
+
+  .your__age__info,
+  .common__days {
+    font-size: 12px;
+  }
+
+  #label {
+    flex-direction: column;
+  }
+
+  .label {
+    font-size: 12px;
+    gap: 12px;
+  }
+
+  .checkbox {
+    width: 15px;
+  }
+
+  .input{
+    width: 100%;
+    padding: 8px 12px;
+  }
+
+  .generate-button{
+    font-size: 12px;
+    max-width: 100%;
+  }
+
+  .password{
+    font-size: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .wordInformation{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .wirdInfoText{
+    font-size: 12px;
+  }
 }
