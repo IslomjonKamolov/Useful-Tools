@@ -574,6 +574,10 @@ h6 {
   display: none;
 }
 
+.burgerMenu{
+  display: none;
+}
+
 @media (max-width: 768px) {
   .nav__list {
     display: none;
