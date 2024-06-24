@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Header() {
   const [dropDown, setDropDown] = useState(false);
   const [menu, setMenu] = useState(false);
-  
+
   return (
     <>
       <header className="header">
@@ -17,16 +17,6 @@ export default function Header() {
               <li className="list__item">
                 <Link to="/" className="link">
                   Home
-                </Link>
-              </li>
-              {/* <li className="list__item">
-                <Link to="About" className="link">
-                  About
-                </Link>
-              </li> */}
-              <li className="list__item">
-                <Link to="Contact" className="link">
-                  Contact
                 </Link>
               </li>
               <li
@@ -147,7 +137,7 @@ export default function Header() {
               style={menu ? { top: "0" } : { top: "-200%" }}
               className="res__nav__list"
             >
-              <button onClick={()=> setMenu(false)} className="closeBtn">
+              <button onClick={() => setMenu(false)} className="closeBtn">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -171,13 +161,12 @@ export default function Header() {
               </button>
 
               <li className="res__list__item">
-                <Link to="/" onClick={() => setMenu(false)} className="res__link">
+                <Link
+                  to="/"
+                  onClick={() => setMenu(false)}
+                  className="res__link"
+                >
                   Home
-                </Link>
-              </li>
-              <li className="res__list__item">
-                <Link to="Contact" className="res__link" onClick={() => setMenu(false)}>
-                  Contact
                 </Link>
               </li>
               <li className="res__list__item__category">
@@ -213,17 +202,29 @@ export default function Header() {
                   className={dropDown ? `res__category__list` : "res__hidden"}
                 >
                   <li>
-                    <Link onClick={() => setMenu(false)} to="AgeCalculator" className="res__link">
+                    <Link
+                      onClick={() => setMenu(false)}
+                      to="AgeCalculator"
+                      className="res__link"
+                    >
                       Age calculator
                     </Link>
                   </li>
                   <li>
-                    <Link onClick={() => setMenu(false)} to="WordCounter" className="res__link">
+                    <Link
+                      onClick={() => setMenu(false)}
+                      to="WordCounter"
+                      className="res__link"
+                    >
                       Word counter
                     </Link>
                   </li>
                   <li>
-                    <Link onClick={() => setMenu(false)} to="Password" className="res__link">
+                    <Link
+                      onClick={() => setMenu(false)}
+                      to="Password"
+                      className="res__link"
+                    >
                       Password Generator
                     </Link>
                   </li>

@@ -47,24 +47,30 @@ export default function WordCounter() {
   return (
     <section className="wordCounterSec">
       <div className="container">
-        <textarea
-          className="textArea"
-          value={text}
-          onChange={handleTextChange}
-          placeholder="Enter your text here..."
-          rows={10}
-          cols={50}
-        />
-        <br />
-        <button className="age__calcBtn" onClick={analyzeText}>
-          Calculate
-        </button>
+        <div className="wordCounter__container">
+          <h2 className="title">Word Counter</h2>
+          <p className="miniText">
+            Count words, sentences, characters and paragraphs with single click!
+          </p>
+          <textarea
+            className="textArea"
+            value={text}
+            onChange={handleTextChange}
+            placeholder="Enter your text here..."
+            rows={10}
+            cols={50}
+          />
+          <br />
+          <button className="age__calcBtn" onClick={analyzeText}>
+            Calculate
+          </button>
 
-        <div className="wordInformation">
-          <p className="wirdInfoText">Word count: {wordCount}</p>
-          <p className="wirdInfoText">Sentence count: {sentenceCount}</p>
-          <p className="wirdInfoText">Paragraph count: {paragraphCount}</p>
-          <p className="wirdInfoText">Character count: {characterCount}</p>
+          <div className="wordInformation">
+            <p className="wirdInfoText">Word count: {wordCount}</p>
+            <p className="wirdInfoText">Sentence count: {sentenceCount}</p>
+            <p className="wirdInfoText">Paragraph count: {paragraphCount}</p>
+            <p className="wirdInfoText">Character count: {characterCount}</p>
+          </div>
         </div>
       </div>
     </section>

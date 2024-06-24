@@ -78,12 +78,22 @@ export default function AgeCalculator() {
         )}
         {ageDetails && (
           <div className="ageInfoBox">
-            <h2 className="your__age">Your age:</h2>
-            <p className="your__age__info">
-              {ageDetails.years} year, {ageDetails.months} month,{" "}
-              {ageDetails.days} day
-            </p>
-            <p className="common__days">Total days: {ageDetails.totalDays}</p>
+            <div className="ageInfo">
+              {ageDetails.years} <br />
+              Years
+            </div>
+            <div className="ageInfo">
+              {ageDetails.months} <br />
+              Months
+            </div>
+            <div className="ageInfo">
+              {ageDetails.days} <br />
+              Days
+            </div>
+            <div className="ageInfo">
+              {ageDetails.years} <br />
+              Total days
+            </div>
           </div>
         )}
       </div>

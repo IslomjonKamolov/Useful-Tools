@@ -50,14 +50,16 @@ const PasswordGenerator = () => {
       <h2 className="title">Password Generator</h2>
       <div className="input-group">
         <label className="label" id="label">
-          Length:
+          Length: 
           <input
             className="input"
-            type="number"
+            type="range"
             value={length}
             onChange={(e) => setLength(e.target.value)}
             min="1"
+            max="20"
           />
+          {length}
         </label>
       </div>
       <div className="input-group">
