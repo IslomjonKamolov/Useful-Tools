@@ -7,6 +7,7 @@ export default function WordCounter() {
   const [paragraphCount, setParagraphCount] = useState(0);
   const [characterCount, setCharacterCount] = useState(0); // Character count state
   const [showResults, setShowResults] = useState(false);
+  const [clipboardText, setClipboardText] = useState(""); // State to store clipboard text
 
   const handleTextChange = (event) => {
     const textValue = event.target.value;
@@ -44,6 +45,15 @@ export default function WordCounter() {
     setShowResults(true);
   };
 
+  const handlePasteClick = async () => {
+    try {
+      const clipboardText = await navigator.clipboard.readText();
+      setText(clipboardText);
+    } catch (err) {
+      console.error("Failed to read clipboard contents: ", err);
+    }
+  };
+
   return (
     <section className="wordCounterSec">
       <div className="container">
@@ -61,9 +71,15 @@ export default function WordCounter() {
             cols={50}
           />
           <br />
-          <button className="age__calcBtn" onClick={analyzeText}>
-            Calculate
-          </button>
+          {text === "" ? (
+            <button className="age__calcBtn" onClick={handlePasteClick}>
+              Paste
+            </button>
+          ) : (
+            <button className="age__calcBtn" onClick={analyzeText}>
+              Calculate
+            </button>
+          )}
 
           <div className="wordInformation">
             <p className="wirdInfoText">Word count: {wordCount}</p>
